@@ -1,14 +1,28 @@
 <?php
 
-function ping($host, $port, $timeout) 
-{ 
-  $tB = microtime(true); 
-  $fP = fSockOpen($host, $port, $errno, $errstr, $timeout);
-  
-  if (!$fP) { return "down"; } 
-  $tA = microtime(true);
-  
-  return round((($tA - $tB) * 1000), 0)." ms"; 
+$domain   = "192.168.1.4";
+$port     =  80;
+$ntimes   =  15;
+$timeout  =   1;
+
+function ping($host, $port, $timeout) { 
+
+	  $tB = microtime(true); 
+	  $fP = fSockOpen($host, $port, $errno, $errstr, $timeout);
+	  
+	  	if (!$fP) { return "down"; } 
+		  $tA = microtime(true);
+		  
+		  return round((($tA - $tB) * 1000), 0)." ms";
+		  fclose($fP);
 }
-//Echoing it will display the ping if the host is up, if not it'll say "down".
-echo ping("www.google.com", 80, 10);
+
+echo "LATEN  DOMAIN\n";
+
+for ($i = 1; $i <= $ntimes; $i++) {
+ 
+ 	$a = ping($domain, $port, $timeout);					# Call to function
+
+    echo $a, "  $domain\n";
+    sleep(1);                                               # Can comment this to get faster results.
+}

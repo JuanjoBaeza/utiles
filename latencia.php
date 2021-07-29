@@ -21,8 +21,8 @@ echo "LATEN  DOMAIN\n";
 
 for ($i = 1; $i <= $ntimes; $i++) {
  
- 	$a = ping($domain, $port, $timeout);					# Call to function
+ 	$a = ping($domain, $port, $timeout);
 
     echo $a, "  $domain\n";
-    sleep(1);                                               # Can comment this to get faster results.
+    sleep(1);
 }

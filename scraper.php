@@ -1,9 +1,8 @@
 <?php
 
-// Sencillo script para scrapear la web de filmaffinity.com y obtener la puntuación de una
-// película dada una lista de películas dentro de un directorio (compartido).
-// No funciona cuando encuentra varias películas que tienen el mismo nombre ya que muestra
-// una página distinta a la mostraría con la ficha de la película.
+// Scraper para la web de filmaffinity.com, obtiene la puntuación de una
+// película dada una lista de películas dentro de un directorio.
+// No funciona cuando encuentra varias películas que tienen el mismo nombre
 
 class Principal {
     
